@@ -55,6 +55,7 @@ int main()
                 break;
             }
             curP=Q.front();
+            cur_time=max(cur_time, curP.ar_time);//Important
             Q.pop();
             if(curP.time_left<=q)
             {
@@ -65,7 +66,7 @@ int main()
                 w_time=t_time-curP.b_time;//waiting time
                 avg_turn+=t_time;//average turnaround time
                 avg_wait+=w_time;//average waiting time
-                printf("%6d%11d%11d%11d%11d%11d\n", curP.id, curP.ar_time, curP.b_time, curP.f_time, t_time, w_time);
+                printf("%7d%11d%11d%11d%11d%11d\n", curP.id, curP.ar_time, curP.b_time, curP.f_time, t_time, w_time);
                 continue;
             }
             else
